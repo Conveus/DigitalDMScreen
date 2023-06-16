@@ -1,0 +1,100 @@
+﻿
+@if (_pc != null)
+{
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleLabel">PC Quick View</h5>
+                    <button type="button" class="close btn btn-lg" @onclick="Close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col row">
+                        <div class="col-12 col-sm-8">
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Name</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.Name</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Player</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.Player</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Race</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.Race</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Class</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.Class</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Gender</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.Gender</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Health</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.Health</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Max Health</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.MaxHealth</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Temp Health</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.TempHealth</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Armour Class</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.ArmourClass</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Passive Perception</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.PassivePerception</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-5 col-form-label">Text</label>
+                                <div class="col-sm-7">
+                                    <label type="text" readonly class="form-control-plaintext">@_pc.Text</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" @onclick="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

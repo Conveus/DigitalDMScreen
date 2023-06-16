@@ -1,0 +1,88 @@
+﻿@page "/pcdetail/{Id}"
+
+<section class="employee-detail">
+    <h1 class="page-title">@PC.Name</h1>
+    <br />
+    <div class="col-12 row">
+        <div class="col-10 row">
+            <div class="col-12 col-xxl-8">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Level</label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@PC.Level</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Gender</label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@PC.Gender</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Race</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.Race</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Class</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.Class</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Player</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.Player</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Health</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.Health</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Max Health</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.MaxHealth</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Temp Health</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.TempHealth</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Armour Class</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.ArmourClass</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Passive Perception</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.PassivePerception</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Text</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@PC.Text</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xxl-4">
+            </div>
+        </div>
+    </div>
+</section>

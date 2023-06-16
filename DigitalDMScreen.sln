@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalDMScreenApp", "DigitalDMScreenApp\DigitalDMScreenApp.csproj", "{58512A16-DC6F-425D-9F43-EA16A1389B73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalDMScreenApp", "DigitalDMScreenApp\DigitalDMScreenApp.csproj", "{58512A16-DC6F-425D-9F43-EA16A1389B73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalDMScreen.Shared", "DigitalDMScreen.Shared\DigitalDMScreen.Shared.csproj", "{A522B9CA-9B3F-49A0-8D5A-965FFEFC3E64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{58512A16-DC6F-425D-9F43-EA16A1389B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58512A16-DC6F-425D-9F43-EA16A1389B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58512A16-DC6F-425D-9F43-EA16A1389B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A522B9CA-9B3F-49A0-8D5A-965FFEFC3E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A522B9CA-9B3F-49A0-8D5A-965FFEFC3E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A522B9CA-9B3F-49A0-8D5A-965FFEFC3E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A522B9CA-9B3F-49A0-8D5A-965FFEFC3E64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
