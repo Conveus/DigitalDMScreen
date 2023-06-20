@@ -1,8 +1,11 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace DigitalDMScreen.Shared.Domain
 {
     public class Monster: Combat
     {
-        public string[]? Attacks;
+        //[Key]
+        //public int MonsterId { get; set; }
     }
 }

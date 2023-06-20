@@ -25,19 +25,19 @@ namespace DigitalDMScreenApp.Models
             {
                 Id = 1,
                 Name = "Wyn's outstanding debt to The Dreamer",
-                Text = "The Dreamer will show up randomly 15 times"
+                Notes = "The Dreamer will show up randomly 15 times"
             };
             var n2 = new Note
             {
                 Id = 2,
                 Name = "Miralla's Eldritch Tattoo",
-                Text = "The tattoo is at stage 2"
+                Notes = "The tattoo is at stage 2"
             };
             var n3 = new Note
             {
                 Id = 3,
                 Name = "Plans to mess with the party",
-                Text ="1) Dreamer schenanigans, 2) The Deep, 3) Prim"
+                Notes ="1) Dreamer schenanigans, 2) The Deep, 3) Prim"
             };
 
             return new List<Note> { n1,n2,n3 };
@@ -59,7 +59,7 @@ namespace DigitalDMScreenApp.Models
             {
                 Id = 1,
                 Name = "Trunk Nose Inn",
-                Text = "Owned by Jorge, an Elephant Selkie. Has both a magic item/spell store and an enchanter",
+                Notes = "Owned by Jorge, an Elephant Selkie. Has both a magic item/spell store and an enchanter",
                 Type = "Port",
                 Description = "A small but important trade hub at the centre of the Bay of the Seal"
             };
@@ -68,7 +68,7 @@ namespace DigitalDMScreenApp.Models
             {
                 Id = 2,
                 Name = "Bay of the Seal",
-                Text = "The first/tutorial zone",
+                Notes = "The first/tutorial zone",
                 Type = "Archipelego",
                 Description = "A mid size archepeligo and territory of the Selkie Kingdom, the Sultante of the Sands, and the former Grand Kingdom of Trytos"
             };
@@ -77,7 +77,7 @@ namespace DigitalDMScreenApp.Models
             {
                 Id = 3,
                 Name = "The Rememberance",
-                Text = "The party's ship has a garden set up at the back of the ship behind the wheel",
+                Notes = "The party's ship has a garden set up at the back of the ship behind the wheel",
                 Type = "Ship",
                 Description = "A sloop owned by Solv Kveoa, looks to have been repaired a few times"
             };
@@ -101,31 +101,37 @@ namespace DigitalDMScreenApp.Models
             {
                 Id = 1,
                 Name = "Ankheg",
+                Level = 2,
                 Health = 39,
                 MaxHealth = 39,
                 ArmourClass = 12,
                 PassivePerception = 11,
-                Text = "A kind of giant ant"
+                Attacks = "Bite. Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage plus 3 (1d6) acid damage. If the target is a Large or smaller creature, it is grappled (escape DC 13). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on attack rolls to do so.",
+                Notes = "A kind of giant ant"
             };
             var m2 = new Monster
             {
                 Id = 2,
                 Name = "Ankheg Queen",
+                Level = 5,
                 Health = 110,
                 MaxHealth = 110,
                 ArmourClass = 16,
                 PassivePerception = 12,
-                Text = "The leader of Ankheg colonies"
+                Attacks = "Bite. Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 16 (2d10 + 5) slashing damage plus 9 (2d6) acid damage. If the target is a Huge or smaller creature, it is grappled (escape DC 15). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on the attack rolls to do so.",
+                Notes = "The leader of Ankheg colonies"
             };
             var m3 = new Monster
             {
                 Id = 3,
                 Name = "Stonejaw Ankheg",
+                Level = 8,
                 Health = 141,
                 MaxHealth = 141,
                 ArmourClass = 21,
                 PassivePerception = 12,
-                Text = "The burrower of Ankheg colonies"
+                Attacks = "Bite. Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 27 (4d10 + 6) slashing damage. If the target is a Huge or smaller creature, it is grappled (escape DC 16). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on the attack rolls to do so.\r\n\r\nPetrification Breath (Recharge 6). The ankheg exhales petrifying dust in a line that is 30 feet long and 5 feet wide, provided that it has no creature grappled. Each creature in that line must make a DC 16 saving throw against being magically petrified. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure the creature is petrified until freed by the greater restoration spell or other magic.",
+                Notes = "The burrower of Ankheg colonies"
             };
 
             return new List<Monster> { m1, m2, m3 };
@@ -157,7 +163,7 @@ namespace DigitalDMScreenApp.Models
                 TempHealth = 0,
                 ArmourClass = 16,
                 PassivePerception = 10,
-                Text = "The crew's navigator"
+                Notes = "The crew's navigator"
             };
             var p2 = new PlayerCharacter
             {
@@ -173,7 +179,7 @@ namespace DigitalDMScreenApp.Models
                 TempHealth = 0,
                 ArmourClass = 16,
                 PassivePerception = 10,
-                Text = "The crew's first mate"
+                Notes = "The crew's first mate"
             };
             var p3 = new PlayerCharacter
             {
@@ -189,7 +195,7 @@ namespace DigitalDMScreenApp.Models
                 TempHealth = 0,
                 ArmourClass = 14,
                 PassivePerception = 12,
-                Text = "The crew's captain"
+                Notes = "The crew's captain"
             };
 
             return new List<PlayerCharacter> { p1, p2, p3 };
