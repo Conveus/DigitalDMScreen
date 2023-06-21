@@ -1,0 +1,39 @@
+﻿
+<!-- Increases or decreases active panel number to switch panels -->
+<div class="panel-nav row">
+    <!-- Only diplays buttons if not at edge of range -->
+    @if (ActivePanel != 1)
+    {
+        <button class="btn btn-primary col" @onclick="() => Decrement()">Left</button>
+    }
+    <div class="panel-num col">Panel @ActivePanel</div>
+    @if (ActivePanel != 3)
+    {
+        <button class="btn btn-primary col" @onclick="() => Increment()">Right</button>
+    }
+</div>
+<div>
+
+    <!-- Display panel content based on active panel number -->
+    <div>
+        @if (ActivePanel == 1)
+        {
+            <div>
+                <p>Panel 1 Content</p>
+            </div>
+        }
+        else if (ActivePanel == 2)
+        {
+            <div>
+                <p>Panel 2 Content</p>
+            </div>
+        }
+        else if (ActivePanel == 3)
+        {
+            <div>
+                <p>Panel 3 Content</p>
+            </div>
+        }
+    </div>
+    
+</div>
