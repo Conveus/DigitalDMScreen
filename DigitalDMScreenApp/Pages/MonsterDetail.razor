@@ -1,0 +1,62 @@
+﻿@page "/monsterdetail/{Id}"
+
+<section class="employee-detail">
+    <h1 class="page-title">@Monster.Name</h1>
+    <br />
+    <div class="col-12 row">
+        <div class="col-10 row">
+            <div class="col-12 col-xxl-8">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Level</label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@Monster.Level</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Health</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@Monster.Health</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Max Health</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@Monster.MaxHealth</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Temp Health</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@Monster.TempHealth</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Armour Class</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@Monster.ArmourClass</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Passive Perception</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@Monster.PassivePerception</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Notes</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@Monster.Notes</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xxl-4">
+            </div>
+        </div>
+    </div>
+</section>

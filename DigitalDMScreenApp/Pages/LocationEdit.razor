@@ -1,0 +1,60 @@
+﻿@page "/locationedit"
+@page "/locationedit/{Id}"
+@using DigitalDMScreen.Shared.Domain;
+
+@if (Saved == false)
+{
+    <section class="location-edit">
+        <h1 class="page-title">@Location.Name</h1>
+        <EditForm Model="@Location" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="row mb-3">
+                <label for="Name" class="col-form-label col-md-3">Name: </label>
+                <div class="col-md-8">
+                    <InputText id="Name" @bind-Value="@Location.Name" class="form-control col-md-8" placeholder="Enter Name" />
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Location.Name)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="Type" class="col-form-label col-md-3">Type: </label>
+                <div class="col-md-8">
+                    <InputText id="Type" @bind-Value="@Location.Type" class="form-control col-md-8" placeholder="Enter Type" />
+                </div>
+            </div>
+
+			<div class="row mb-3">
+                <label for="Description" class="col-form-label col-md-3">Description: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Description" @bind-Value="@Location.Description" class="form-control col-md-8" placeholder="Enter Description" />
+                </div>
+            </div>
+			
+            <div class="row mb-3">
+                <label for="Notes" class="col-form-label col-md-3">Notes: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Notes" @bind-Value="@Location.Notes" class="form-control col-md-8" placeholder="Enter Notes" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Save Location</button>
+
+            @if (Location.Id > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeleteLocation">Delete</button>
+            }
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+}
+
+

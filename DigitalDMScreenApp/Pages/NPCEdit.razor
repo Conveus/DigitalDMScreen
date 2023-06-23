@@ -1,0 +1,128 @@
+﻿@page "/npcedit"
+@page "/npcedit/{Id}"
+@using DigitalDMScreen.Shared.Domain;
+
+@if (Saved == false)
+{
+    <section class="npc-edit">
+        <h1 class="page-title">@NPC.Name</h1>
+        <EditForm Model="@NPC" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="row mb-3">
+                <label for="Name" class="col-form-label col-md-3">Name: </label>
+                <div class="col-md-8">
+                    <InputText id="Name" @bind-Value="@NPC.Name" class="form-control col-md-8" placeholder="Enter Name" />
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => NPC.Name)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="Level" class="col-form-label col-md-3">Level: </label>
+                <div class="col-md-8">
+                    <InputNumber id="Level" @bind-Value="@NPC.Level" class="form-control col-md-8" placeholder="Enter Level" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Gender" class="col-form-label col-md-3">Gender: </label>
+                <div class="col-md-8">
+                    <InputSelect id="Gender" class="form-select col-md-8" @bind-Value="@NPC.Gender">
+                        @foreach (var gender in (Gender[])Enum.GetValues(typeof(Gender)))
+                        {
+                            <option value="@gender">@gender</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Race" class="col-form-label col-md-3">Race: </label>
+                <div class="col-md-8">
+                    <InputText id="Race" @bind-Value="@NPC.Race" class="form-control col-md-8" placeholder="Enter Race" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Role" class="col-form-label col-md-3">Role: </label>
+                <div class="col-md-8">
+                    <InputText id="Role" @bind-Value="@NPC.Role" class="form-control col-md-8" placeholder="Enter Role" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Appearance" class="col-form-label col-md-3">Appearance: </label>
+                <div class="col-md-8">
+                    <InputText id="Appearance" @bind-Value="@NPC.Appearance" class="form-control col-md-8" placeholder="Enter Appearance" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Health" class="col-form-label col-md-3">Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="Health" @bind-Value="@NPC.Health" class="form-control col-md-8" placeholder="Enter Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="MaxHealth" class="col-form-label col-md-3">Max Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="MaxHealth" @bind-Value="@NPC.MaxHealth" class="form-control col-md-8" placeholder="Enter Max Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="TempHealth" class="col-form-label col-md-3">Temp Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="TempHealth" @bind-Value="@NPC.TempHealth" class="form-control col-md-8" placeholder="Enter Temp Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="ArmourClass" class="col-form-label col-md-3">Armour Class: </label>
+                <div class="col-md-8">
+                    <InputNumber id="ArmourClass" @bind-Value="@NPC.ArmourClass" class="form-control col-md-8" placeholder="Enter Armour Class" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="PassivePerception" class="col-form-label col-md-3">Passive Perception: </label>
+                <div class="col-md-8">
+                    <InputNumber id="PassivePerception" @bind-Value="@NPC.PassivePerception" class="form-control col-md-8" placeholder="Enter Passive Perception" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Attacks" class="col-form-label col-md-3">Attacks: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Attacks" @bind-Value="@NPC.Attacks" class="form-control col-md-8" placeholder="Enter Attacks" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Notes" class="col-form-label col-md-3">Notes: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Notes" @bind-Value="@NPC.Notes" class="form-control col-md-8" placeholder="Enter Notes" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Save NPC</button>
+
+            @if (NPC.Id > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeleteNPC">Delete</button>
+            }
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+}
+
+

@@ -1,0 +1,18 @@
+﻿<div class="col">
+    <div class="card rounded-3">
+        <div class="card-header py-3">
+            <h4>@Monster.Name</h4>
+        </div>
+        <div class="card-body text-center">
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await MonsterQuickViewClicked.InvokeAsync(Monster))"> Quick view</button>
+            
+            <button class="btn btn-outline-primary btn-sm mb-1" @onclick="(() => NavigateToDetails(Monster))">
+                Full details
+            </button>
+
+            <a href="@($"monsteredit/{Monster.Id}")" class="btn btn-outline-primary btn-sm mb-1">
+                Edit Monster
+            </a>
+        </div>
+    </div>
+</div>

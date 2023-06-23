@@ -1,5 +1,24 @@
 ﻿@page "/pcoverview"
 
-<h2>PCOverview</h2>
+<h2>PC Overview</h2>
 
+@if (PCs == null)
+{
+    <p><em>Loading... </em></p>
+}
+else
+{
+    <PCQuickView PC="_selectedPC"></PCQuickView>
+    <a href="@($"pcedit")" class="btn btn-primary btn-sm mb-1">
+        Create PC
+    </a>
+    <div class="row">
+        @foreach (var pc in PCs)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <PCCard PC="pc" PCQuickViewClicked="ShowPCQuickView"></PCCard>
+            </div>
 
+        }
+    </div>
+}
