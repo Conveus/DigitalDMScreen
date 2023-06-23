@@ -1,0 +1,128 @@
+﻿@page "/pcedit"
+@page "/pcedit/{Id}"
+@using DigitalDMScreen.Shared.Domain;
+
+@if (Saved == false)
+{
+    <section class="pc-edit">
+        <h1 class="page-title">@PC.Name</h1>
+        <EditForm Model="@PC" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="row mb-3">
+                <label for="Name" class="col-form-label col-md-3">Name: </label>
+                <div class="col-md-8">
+                    <InputText id="Name" @bind-Value="@PC.Name" class="form-control col-md-8" placeholder="Enter Name" />
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => PC.Name)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="Level" class="col-form-label col-md-3">Level: </label>
+                <div class="col-md-8">
+                    <InputNumber id="Level" @bind-Value="@PC.Level" class="form-control col-md-8" placeholder="Enter Level" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Gender" class="col-form-label col-md-3">Gender: </label>
+                <div class="col-md-8">
+                    <InputSelect id="Gender" class="form-select col-md-8" @bind-Value="@PC.Gender">
+                        @foreach (var gender in (Gender[])Enum.GetValues(typeof(Gender)))
+                        {
+                            <option value="@gender">@gender</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Race" class="col-form-label col-md-3">Race: </label>
+                <div class="col-md-8">
+                    <InputText id="Race" @bind-Value="@PC.Race" class="form-control col-md-8" placeholder="Enter Race" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Class" class="col-form-label col-md-3">Class: </label>
+                <div class="col-md-8">
+                    <InputText id="Class" @bind-Value="@PC.Class" class="form-control col-md-8" placeholder="Enter Class" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Player" class="col-form-label col-md-3">Player: </label>
+                <div class="col-md-8">
+                    <InputText id="Player" @bind-Value="@PC.Player" class="form-control col-md-8" placeholder="Enter Player Name" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Health" class="col-form-label col-md-3">Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="Health" @bind-Value="@PC.Health" class="form-control col-md-8" placeholder="Enter Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="MaxHealth" class="col-form-label col-md-3">Max Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="MaxHealth" @bind-Value="@PC.MaxHealth" class="form-control col-md-8" placeholder="Enter Max Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="TempHealth" class="col-form-label col-md-3">Temp Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="TempHealth" @bind-Value="@PC.TempHealth" class="form-control col-md-8" placeholder="Enter Temp Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="ArmourClass" class="col-form-label col-md-3">Armour Class: </label>
+                <div class="col-md-8">
+                    <InputNumber id="ArmourClass" @bind-Value="@PC.ArmourClass" class="form-control col-md-8" placeholder="Enter Armour Class" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="PassivePerception" class="col-form-label col-md-3">Passive Perception: </label>
+                <div class="col-md-8">
+                    <InputNumber id="PassivePerception" @bind-Value="@PC.PassivePerception" class="form-control col-md-8" placeholder="Enter Passive Perception" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Attacks" class="col-form-label col-md-3">Attacks: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Attacks" @bind-Value="@PC.Attacks" class="form-control col-md-8" placeholder="Enter Attacks" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Notes" class="col-form-label col-md-3">Notes: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Notes" @bind-Value="@PC.Notes" class="form-control col-md-8" placeholder="Enter Notes" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Save PC</button>
+
+            @if (PC.Id > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeletePC">Delete</button>
+            }
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+}
+
+

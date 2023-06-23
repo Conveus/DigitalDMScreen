@@ -1,0 +1,20 @@
+﻿@page "/notedetail/{Id}"
+
+<section class="employee-detail">
+    <h1 class="page-title">@Note.Name</h1>
+    <br />
+    <div class="col-12 row">
+        <div class="col-10 row">
+            <div class="col-12 col-xxl-8">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Notes</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@Note.Notes</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xxl-4">
+            </div>
+        </div>
+    </div>
+</section>

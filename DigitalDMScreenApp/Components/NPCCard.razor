@@ -1,0 +1,18 @@
+﻿<div class="col">
+    <div class="card rounded-3">
+        <div class="card-header py-3">
+            <h4>@NPC.Name</h4>
+        </div>
+        <div class="card-body text-center">
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await NPCQuickViewClicked.InvokeAsync(NPC))"> Quick view</button>
+            
+            <button class="btn btn-outline-primary btn-sm mb-1" @onclick="(() => NavigateToDetails(NPC))">
+                Full details
+            </button>
+
+            <a href="@($"npcedit/{NPC.Id}")" class="btn btn-outline-primary btn-sm mb-1">
+                Edit NPC
+            </a>
+        </div>
+    </div>
+</div>

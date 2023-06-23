@@ -2,4 +2,23 @@
 
 <h2>NPCOverview</h2>
 
+@if (NPCs == null)
+{
+    <p><em>Loading... </em></p>
+}
+else
+{
+    <NPCQuickView NPC="_selectedNPC"></NPCQuickView>
+    <a href="@($"npcedit")" class="btn btn-primary btn-sm mb-1">
+        Create NPC
+    </a>
+    <div class="row">
+        @foreach (var npc in NPCs)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <NPCCard NPC="npc" NPCQuickViewClicked="ShowNPCQuickView"></NPCCard>
+            </div>
 
+        }
+    </div>
+}

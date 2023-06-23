@@ -3,20 +3,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DigitalDMScreen.Shared.Domain
 {
+    // Inherits from Entry
     public abstract class Combat: Entry
     {
-        public int? Level;
+        public int? Level { get; set; }
 
-        public int? Health;
+        public int? Health { get; set; }
 
-        public int? MaxHealth;
+        public int? MaxHealth { get; set; }
 
-        public int? TempHealth;
+        public int? TempHealth { get; set; }
 
-        public int? ArmourClass;
+        public int? ArmourClass { get; set; }
 
-        public int? PassivePerception;
+        public int? PassivePerception { get; set; }
 
-        public string? Attacks;
+        public string? Attacks { get; set; }
     }
 }

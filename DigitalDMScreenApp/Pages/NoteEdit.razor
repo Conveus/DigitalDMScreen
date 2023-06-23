@@ -1,0 +1,46 @@
+﻿@page "/noteedit"
+@page "/noteedit/{Id}"
+@using DigitalDMScreen.Shared.Domain;
+
+@if (Saved == false)
+{
+    <section class="note-edit">
+        <h1 class="page-title">@Note.Name</h1>
+        <EditForm Model="@Note" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="row mb-3">
+                <label for="Name" class="col-form-label col-md-3">Name: </label>
+                <div class="col-md-8">
+                    <InputText id="Name" @bind-Value="@Note.Name" class="form-control col-md-8" placeholder="Enter Name" />
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Note.Name)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="Notes" class="col-form-label col-md-3">Notes: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Notes" @bind-Value="@Note.Notes" class="form-control col-md-8" placeholder="Enter Notes" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Save Note</button>
+
+            @if (Note.Id > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeleteNote">Delete</button>
+            }
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+}
+
+

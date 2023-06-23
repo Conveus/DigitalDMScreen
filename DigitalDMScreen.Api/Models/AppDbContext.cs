@@ -5,10 +5,6 @@ namespace DigitalDMScreen.Api.Models
 {
     public class AppDbContext : DbContext
     {
-        //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        //{
-
-        //}
 
         public DbSet<Note> Notes { get; set; }
         public DbSet<Location> Locations { get; set; }
@@ -123,7 +119,7 @@ namespace DigitalDMScreen.Api.Models
             // Seeding initial NPCs
             modelBuilder.Entity<NonPlayerCharacter>().HasData(new NonPlayerCharacter
             {
-                Id = 4,
+                Id = 1,
                 Name = "Jeorg",
                 Level = 15,
                 Gender = Gender.Male,
@@ -140,7 +136,7 @@ namespace DigitalDMScreen.Api.Models
 
             modelBuilder.Entity<NonPlayerCharacter>().HasData(new NonPlayerCharacter
             {
-                Id = 5,
+                Id = 2,
                 Name = "High King Sehuet",
                 Level = 15,
                 Gender = Gender.Male,
@@ -157,7 +153,7 @@ namespace DigitalDMScreen.Api.Models
 
             modelBuilder.Entity<NonPlayerCharacter>().HasData(new NonPlayerCharacter
             {
-                Id = 6,
+                Id = 3,
                 Name = "The Dreamer",
                 Level = 20,
                 Gender = Gender.Male,
@@ -171,7 +167,7 @@ namespace DigitalDMScreen.Api.Models
             // Seeding initial PCs
             modelBuilder.Entity<PlayerCharacter>().HasData(new PlayerCharacter
             {
-                Id = 7,
+                Id = 1,
                 Name = "Wyneira Weisestern",
                 Level = 6,
                 Gender = Gender.Female,
@@ -188,7 +184,7 @@ namespace DigitalDMScreen.Api.Models
 
             modelBuilder.Entity<PlayerCharacter>().HasData(new PlayerCharacter
             {
-                Id = 8,
+                Id = 2,
                 Name = "Rosastrex Carnellion",
                 Level = 6,
                 Gender = Gender.Female,
@@ -205,7 +201,7 @@ namespace DigitalDMScreen.Api.Models
 
             modelBuilder.Entity<PlayerCharacter>().HasData(new PlayerCharacter
             {
-                Id = 9,
+                Id = 3,
                 Name = "Solv Kveoa",
                 Level = 6,
                 Gender = Gender.Male,
