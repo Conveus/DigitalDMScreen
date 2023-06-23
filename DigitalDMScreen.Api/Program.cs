@@ -10,7 +10,11 @@ builder.Services.AddDbContext<AppDbContext>(options => {
         builder.Configuration["ConnectionStrings:DefaultConnection"]);
 });
 
+builder.Services.AddScoped<INoteRepository, NoteRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IMonsterRepository, MonsterRepository>();
+builder.Services.AddScoped<INPCRepository, NPCRepository>();
+builder.Services.AddScoped<IPCRepository, PCRepository>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

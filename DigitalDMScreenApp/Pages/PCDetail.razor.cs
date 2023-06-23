@@ -1,22 +1,23 @@
 ﻿using DigitalDMScreen.Shared.Domain;
 using DigitalDMScreenApp.Models;
+using DigitalDMScreenApp.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace DigitalDMScreenApp.Pages
 {
     public partial class PCDetail
     {
+        [Inject]
+        public IPCDataService? PCDataService { get; set; }
+
         [Parameter]
         public string Id { get; set; }
 
         public PlayerCharacter? PC { get; set; } = new PlayerCharacter();
 
-        protected override Task OnInitializedAsync()
+        protected async override Task OnInitializedAsync()
         {
-            PC = MockDataService.PCs.FirstOrDefault(e => e.Id == 
-            int.Parse(Id));
-
-            return base.OnInitializedAsync();
+            PC = await PCDataService.GetPCDetails(int.Parse(Id));
         }
     }
 }

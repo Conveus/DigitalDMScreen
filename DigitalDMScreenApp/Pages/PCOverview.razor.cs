@@ -1,18 +1,23 @@
 ﻿using DigitalDMScreen.Shared.Domain;
 using DigitalDMScreenApp.Models;
+using DigitalDMScreenApp.Services;
+using Microsoft.AspNetCore.Components;
 
 namespace DigitalDMScreenApp.Pages
 {
     public partial class PCOverview
     {
-        public List<PlayerCharacter> PCs { get; set; } = default!;
+        [Inject]
+        public IPCDataService? PCDataService { get; set; }
+
+        public List<PlayerCharacter>? PCs { get; set; } = default!;
 
         private PlayerCharacter? _selectedPC;
 
         // Gets all notes and saves it to list variable 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            PCs = MockDataService.PCs;
+            PCs = (await PCDataService.GetAllPCs()).ToList();
         }
 
         // Function for quick view button, sets _selectedPC to the player character stored in the buttons PCCard

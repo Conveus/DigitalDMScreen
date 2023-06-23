@@ -2,10 +2,9 @@
 
 namespace DigitalDMScreen.Shared.Domain
 {
+    // Inherits from Entry
     public class Location : Entry
     {
-        //[Key]
-        //public int LocationId { get; set; }
         public string? Type { get; set; }
         public string? Description { get; set; }
     }

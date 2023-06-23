@@ -1,0 +1,95 @@
+﻿@page "/monsteredit"
+@page "/monsteredit/{Id}"
+@using DigitalDMScreen.Shared.Domain;
+
+@if (Saved == false)
+{
+    <section class="monster-edit">
+        <h1 class="page-title">@Monster.Name</h1>
+        <EditForm Model="@Monster" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="row mb-3">
+                <label for="Name" class="col-form-label col-md-3">Name: </label>
+                <div class="col-md-8">
+                    <InputText id="Name" @bind-Value="@Monster.Name" class="form-control col-md-8" placeholder="Enter Name" />
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Monster.Name)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="Level" class="col-form-label col-md-3">Level: </label>
+                <div class="col-md-8">
+                    <InputNumber id="Level" @bind-Value="@Monster.Level" class="form-control col-md-8" placeholder="Enter Level" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Health" class="col-form-label col-md-3">Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="Health" @bind-Value="@Monster.Health" class="form-control col-md-8" placeholder="Enter Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="MaxHealth" class="col-form-label col-md-3">Max Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="MaxHealth" @bind-Value="@Monster.MaxHealth" class="form-control col-md-8" placeholder="Enter Max Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="TempHealth" class="col-form-label col-md-3">Temp Health: </label>
+                <div class="col-md-8">
+                    <InputNumber id="TempHealth" @bind-Value="@Monster.TempHealth" class="form-control col-md-8" placeholder="Enter Temp Health" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="ArmourClass" class="col-form-label col-md-3">Armour Class: </label>
+                <div class="col-md-8">
+                    <InputNumber id="ArmourClass" @bind-Value="@Monster.ArmourClass" class="form-control col-md-8" placeholder="Enter Armour Class" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="PassivePerception" class="col-form-label col-md-3">Passive Perception: </label>
+                <div class="col-md-8">
+                    <InputNumber id="PassivePerception" @bind-Value="@Monster.PassivePerception" class="form-control col-md-8" placeholder="Enter Passive Perception" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Attacks" class="col-form-label col-md-3">Attacks: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Attacks" @bind-Value="@Monster.Attacks" class="form-control col-md-8" placeholder="Enter Attacks" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Notes" class="col-form-label col-md-3">Notes: </label>
+                <div class="col-md-8">
+                    <InputTextArea id="Notes" @bind-Value="@Monster.Notes" class="form-control col-md-8" placeholder="Enter Notes" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Save Monster</button>
+
+            @if (Monster.Id > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeleteMonster">Delete</button>
+            }
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+}
+
+

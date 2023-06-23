@@ -2,7 +2,7 @@
 
 namespace DigitalDMScreen.Api.Models
 {
-    public class PCRepository
+    public class PCRepository : IPCRepository
     {
         private readonly AppDbContext _appDbContext;
         private Random random = new Random();

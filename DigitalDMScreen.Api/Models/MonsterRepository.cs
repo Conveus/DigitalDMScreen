@@ -2,7 +2,7 @@
 
 namespace DigitalDMScreen.Api.Models
 {
-    public class MonsterRepository
+    public class MonsterRepository : IMonsterRepository
     {
         private readonly AppDbContext _appDbContext;
         private Random random = new Random();

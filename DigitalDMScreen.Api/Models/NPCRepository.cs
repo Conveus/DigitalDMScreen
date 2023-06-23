@@ -2,7 +2,7 @@
 
 namespace DigitalDMScreen.Api.Models
 {
-    public class NPCRepository
+    public class NPCRepository : INPCRepository
     {
         private readonly AppDbContext _appDbContext;
         private Random random = new Random();
