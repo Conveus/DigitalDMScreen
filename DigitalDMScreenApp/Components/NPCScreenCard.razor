@@ -1,0 +1,49 @@
+﻿<div class="col">
+    <div class="card rounded-3">
+        <div class="card-header py-3">
+            <h4>@NPC.Name</h4>
+        </div>
+        <div class="card-body text-center">
+            
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Level</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@NPC.Level</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Gender</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@NPC.Gender</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Race</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@NPC.Race</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Role</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@NPC.Role</label>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await NPCQuickViewClicked.InvokeAsync(NPC))"> Quick view</button>
+
+            @*<button class="btn btn-outline-primary btn-sm mb-1" @onclick="(() => NavigateToDetails(NPC))">
+            Full details
+            </button>*@
+
+            @*<a href="@($"npcedit/{NPC.Id}")" class="btn btn-outline-primary btn-sm mb-1">
+            Edit NPC
+            </a>*@
+        </div>
+    </div>
+</div>

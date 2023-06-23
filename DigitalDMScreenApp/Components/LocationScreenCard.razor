@@ -1,0 +1,35 @@
+﻿<div class="col">
+    <div class="card rounded-3">
+        <div class="card-header py-3">
+            <h4>@Location.Name</h4>
+        </div>
+        <div class="card-body text-center">
+            
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Type</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Location.Type</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Description</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Location.Description</label>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await LocationQuickViewClicked.InvokeAsync(Location))"> Quick view</button>
+
+            @*<button class="btn btn-outline-primary btn-sm mb-1" @onclick="(() => NavigateToDetails(Location))">
+            Full details
+            </button>*@
+
+            @*<a href="@($"locationedit/{Location.Id}")" class="btn btn-outline-primary btn-sm mb-1">
+            Edit Location
+            </a>*@
+        </div>
+    </div>
+</div>

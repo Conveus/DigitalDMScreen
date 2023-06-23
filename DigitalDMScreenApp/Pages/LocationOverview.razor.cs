@@ -13,6 +13,7 @@ namespace DigitalDMScreenApp.Pages
         public List<Location>? Locations { get; set; } = default!;
 
         private Location? _selectedLocation;
+		private Location? _selectedAddLocation;
 
         // Gets all notes and saves it to list variable 
         protected override async Task OnInitializedAsync()
@@ -25,6 +26,11 @@ namespace DigitalDMScreenApp.Pages
         public void ShowLocationQuickView(Location selectedLocation)
         {
             _selectedLocation = selectedLocation;
+        }
+		
+		public void ShowLocationAddToScreen(Location selectedAddLocation)
+        {
+            _selectedAddLocation = selectedAddLocation;
         }
     }
 }

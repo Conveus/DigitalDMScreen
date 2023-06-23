@@ -13,6 +13,7 @@ namespace DigitalDMScreenApp.Pages
         public List<PlayerCharacter>? PCs { get; set; } = default!;
 
         private PlayerCharacter? _selectedPC;
+		private PlayerCharacter? _selectedAddPC;
 
         // Gets all notes and saves it to list variable 
         protected override async Task OnInitializedAsync()
@@ -25,6 +26,11 @@ namespace DigitalDMScreenApp.Pages
         public void ShowPCQuickView(PlayerCharacter selectedPC)
         {
             _selectedPC = selectedPC;
+        }
+		
+		public void ShowPCAddToScreen(PlayerCharacter selectedPC)
+        {
+            _selectedAddPC = selectedPC;
         }
     }
 }

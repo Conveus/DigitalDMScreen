@@ -10,6 +10,9 @@ namespace DigitalDMScreenApp.Components
 
         [Parameter]
         public EventCallback<Note> NoteQuickViewClicked { get; set; }
+		
+		[Parameter]
+        public EventCallback<Note> NoteAddToScreenClicked { get; set; }
 
         [Inject]
         public NavigationManager NavigationManager { get; set; } = default!;

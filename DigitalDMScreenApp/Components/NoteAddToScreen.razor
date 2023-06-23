@@ -1,0 +1,35 @@
+﻿
+@if (_noteAdd != null)
+{
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleLabel">Note Add to Screen</h5>
+                    <button type="button" class="close btn btn-lg" @onclick="Close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col row">
+                        <div class="col-12 col-sm-8">
+
+                            <div class="row mb-3">
+                                <label for="Panel" class="col-form-label col-md-3">Add to Panel: </label>
+                                <div class="col-md-8">
+                                    <InputSelect id="Panel" class="form-select col-md-8" @bind-Value="@panel">
+                                        <option value="1">Left Panel</option>
+                                        <option value="2">Centre Panel</option>
+                                        <option value="3">Right Panel</option>
+                                    </InputSelect>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" @onclick="AddtoScreen">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

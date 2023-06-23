@@ -10,6 +10,9 @@ namespace DigitalDMScreenApp.Components
 
         [Parameter]
         public EventCallback<Monster> MonsterQuickViewClicked { get; set; }
+		
+		[Parameter]
+        public EventCallback<Monster> MonsterAddToScreenClicked { get; set; }
 
         [Inject]
         public NavigationManager NavigationManager { get; set; } = default!;

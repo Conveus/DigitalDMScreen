@@ -13,6 +13,8 @@
             <a href="@($"pcedit/{PC.Id}")" class="btn btn-outline-primary btn-sm mb-1">
                 Edit PC
             </a>
+			
+			<button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await PCAddToScreenClicked.InvokeAsync(PC))"> Add to Screen</button>
         </div>
     </div>
 </div>

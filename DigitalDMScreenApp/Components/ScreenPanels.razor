@@ -19,19 +19,175 @@
         @if (ActivePanel == 1)
         {
             <div>
-                <p>Panel 1 Content</p>
+                <div class="row">
+                    @foreach (var pc in ScreenNotes.P1UsedPCs)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <PCScreenCard PC="pc" PCQuickViewClicked="ShowPCQuickView"></PCScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var npc in ScreenNotes.P1UsedNPCs)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <NPCScreenCard NPC="npc" NPCQuickViewClicked="ShowNPCQuickView"></NPCScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var monster in ScreenNotes.P1UsedMonsters)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <MonsterScreenCard Monster="monster" MonsterQuickViewClicked="ShowMonsterQuickView"></MonsterScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var location in ScreenNotes.P1UsedLocations)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <LocationScreenCard Location="location" LocationQuickViewClicked="ShowLocationQuickView"></LocationScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var note in ScreenNotes.P1UsedNotes)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <NoteScreenCard Note="note" NoteQuickViewClicked="ShowNoteQuickView"></NoteScreenCard>
+                        </div>
+
+                    }
+                </div>
             </div>
         }
         else if (ActivePanel == 2)
         {
             <div>
-                <p>Panel 2 Content</p>
+                <div class="row">
+                    @foreach (var pc in ScreenNotes.P2UsedPCs)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <PCScreenCard PC="pc" PCQuickViewClicked="ShowPCQuickView"></PCScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var npc in ScreenNotes.P2UsedNPCs)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <NPCScreenCard NPC="npc" NPCQuickViewClicked="ShowNPCQuickView"></NPCScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var monster in ScreenNotes.P2UsedMonsters)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <MonsterScreenCard Monster="monster" MonsterQuickViewClicked="ShowMonsterQuickView"></MonsterScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var location in ScreenNotes.P2UsedLocations)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <LocationScreenCard Location="location" LocationQuickViewClicked="ShowLocationQuickView"></LocationScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var note in ScreenNotes.P2UsedNotes)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <NoteScreenCard Note="note" NoteQuickViewClicked="ShowNoteQuickView"></NoteScreenCard>
+                        </div>
+
+                    }
+                </div>
             </div>
         }
         else if (ActivePanel == 3)
         {
             <div>
-                <p>Panel 3 Content</p>
+                <div class="row">
+                    @foreach (var pc in ScreenNotes.P3UsedPCs)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <PCScreenCard PC="pc" PCQuickViewClicked="ShowPCQuickView"></PCScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var npc in ScreenNotes.P3UsedNPCs)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <NPCScreenCard NPC="npc" NPCQuickViewClicked="ShowNPCQuickView"></NPCScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var monster in ScreenNotes.P3UsedMonsters)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <MonsterScreenCard Monster="monster" MonsterQuickViewClicked="ShowMonsterQuickView"></MonsterScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var location in ScreenNotes.P3UsedLocations)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <LocationScreenCard Location="location" LocationQuickViewClicked="ShowLocationQuickView"></LocationScreenCard>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    @foreach (var note in ScreenNotes.P3UsedNotes)
+                    {
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <NoteScreenCard Note="note" NoteQuickViewClicked="ShowNoteQuickView"></NoteScreenCard>
+                        </div>
+
+                    }
+                </div>
             </div>
         }
     </div>

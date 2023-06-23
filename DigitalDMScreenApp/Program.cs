@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using DigitalDMScreenApp;
 using DigitalDMScreenApp.Services;
 using Microsoft.AspNetCore.Components.Web;
@@ -22,5 +23,8 @@ client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 builder.Services.AddHttpClient<INoteDataService, NoteDataService>(client =>
 client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
+builder.Services.AddBlazoredLocalStorage();
+
+builder.Services.AddScoped<ScreenNotes>();
 
 await builder.Build().RunAsync();

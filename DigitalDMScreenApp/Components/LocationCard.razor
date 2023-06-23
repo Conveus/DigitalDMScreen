@@ -13,6 +13,8 @@
             <a href="@($"locationedit/{Location.Id}")" class="btn btn-outline-primary btn-sm mb-1">
                 Edit Location
             </a>
+			
+			<button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await LocationAddToScreenClicked.InvokeAsync(Location))"> Add to Screen</button>
         </div>
     </div>
 </div>

@@ -10,6 +10,9 @@ namespace DigitalDMScreenApp.Components
 
         [Parameter]
         public EventCallback<PlayerCharacter> PCQuickViewClicked { get; set; }
+		
+		[Parameter]
+        public EventCallback<PlayerCharacter> PCAddToScreenClicked { get; set; }
 
         [Inject]
         public NavigationManager NavigationManager { get; set; } = default!;

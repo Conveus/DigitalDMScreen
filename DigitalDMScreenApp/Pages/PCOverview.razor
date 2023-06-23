@@ -9,6 +9,7 @@
 else
 {
     <PCQuickView PC="_selectedPC"></PCQuickView>
+	<PCAddToScreen PC="_selectedAddPC"></PCAddToScreen>
     <a href="@($"pcedit")" class="btn btn-primary btn-sm mb-1">
         Create PC
     </a>
@@ -16,7 +17,7 @@ else
         @foreach (var pc in PCs)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <PCCard PC="pc" PCQuickViewClicked="ShowPCQuickView"></PCCard>
+                <PCCard PC="pc" PCQuickViewClicked="ShowPCQuickView" PCAddToScreenClicked="ShowPCAddToScreen"></PCCard>
             </div>
 
         }

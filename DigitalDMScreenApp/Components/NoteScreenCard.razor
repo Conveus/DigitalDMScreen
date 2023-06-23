@@ -1,0 +1,28 @@
+﻿<div class="col">
+    <div class="card rounded-3">
+        <div class="card-header py-3">
+            <h4>@Note.Name</h4>
+        </div>
+        <div class="card-body text-center">
+            
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Notes</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Note.Notes</label>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await NoteQuickViewClicked.InvokeAsync(Note))"> Quick view</button>
+
+            @*<button class="btn btn-outline-primary btn-sm mb-1" @onclick="(() => NavigateToDetails(Note))">
+            Full details
+            </button>*@
+
+            @*<a href="@($"noteedit/{Note.Id}")" class="btn btn-outline-primary btn-sm mb-1">
+            Edit Note
+            </a>*@
+        </div>
+    </div>
+</div>

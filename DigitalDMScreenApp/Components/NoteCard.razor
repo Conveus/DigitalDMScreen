@@ -13,6 +13,8 @@
             <a href="@($"noteedit/{Note.Id}")" class="btn btn-outline-primary btn-sm mb-1">
                 Edit Note
             </a>
+			
+			<button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await NoteAddToScreenClicked.InvokeAsync(Note))"> Add to Screen</button>
         </div>
     </div>
 </div>
