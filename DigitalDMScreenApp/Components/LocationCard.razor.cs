@@ -10,6 +10,9 @@ namespace DigitalDMScreenApp.Components
 
         [Parameter]
         public EventCallback<Location> LocationQuickViewClicked { get; set; }
+		
+		[Parameter]
+        public EventCallback<Location> LocationAddToScreenClicked { get; set; }
 
         [Inject]
         public NavigationManager NavigationManager { get; set; } = default!;

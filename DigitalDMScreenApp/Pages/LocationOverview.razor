@@ -9,6 +9,7 @@
 else
 {
     <LocationQuickView Location="_selectedLocation"></LocationQuickView>
+	<LocationAddToScreen Location="_selectedAddLocation"></LocationAddToScreen>
     <a href="@($"locationedit")" class="btn btn-primary btn-sm mb-1">
         Create Location
     </a>
@@ -16,7 +17,7 @@ else
         @foreach (var location in Locations)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <LocationCard Location="location" LocationQuickViewClicked="ShowLocationQuickView"></LocationCard>
+                <LocationCard Location="location" LocationQuickViewClicked="ShowLocationQuickView" LocationAddToScreenClicked="ShowLocationAddToScreen"></LocationCard>
             </div>
 
         }

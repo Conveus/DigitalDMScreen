@@ -13,6 +13,7 @@ namespace DigitalDMScreenApp.Pages
         public List<Note>? Notes { get; set; } = default!;
 
         private Note? _selectedNote;
+		private Note? _selectedAddNote;
 
         // Gets all notes and saves it to list variable 
         protected override async Task OnInitializedAsync()
@@ -25,6 +26,11 @@ namespace DigitalDMScreenApp.Pages
         public void ShowNoteQuickView(Note selectedNote)
         {
             _selectedNote = selectedNote;
+        }
+		
+		public void ShowNoteAddToScreen(Note selectedAddNote)
+        {
+            _selectedAddNote = selectedAddNote;
         }
     }
 }

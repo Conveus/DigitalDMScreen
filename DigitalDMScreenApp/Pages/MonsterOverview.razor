@@ -9,6 +9,7 @@
 else
 {
     <MonsterQuickView Monster="_selectedMonster"></MonsterQuickView>
+	<MonsterAddToScreen Monster="_selectedAddMonster"></MonsterAddToScreen>
     <a href="@($"monsteredit")" class="btn btn-primary btn-sm mb-1">
         Create Monster
     </a>
@@ -16,7 +17,7 @@ else
         @foreach (var monster in Monsters)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <MonsterCard Monster="monster" MonsterQuickViewClicked="ShowMonsterQuickView"></MonsterCard>
+                <MonsterCard Monster="monster" MonsterQuickViewClicked="ShowMonsterQuickView" MonsterAddToScreenClicked="ShowMonsterAddToScreen"></MonsterCard>
             </div>
 
         }

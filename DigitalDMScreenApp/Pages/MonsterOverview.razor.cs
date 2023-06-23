@@ -13,6 +13,7 @@ namespace DigitalDMScreenApp.Pages
         public List<Monster>? Monsters { get; set; } = default!;
 
         private Monster? _selectedMonster;
+		private Monster? _selectedAddMonster;
 
         // Gets all notes and saves it to list variable 
         protected override async Task OnInitializedAsync()
@@ -25,6 +26,11 @@ namespace DigitalDMScreenApp.Pages
         public void ShowMonsterQuickView(Monster selectedMonster)
         {
             _selectedMonster = selectedMonster;
+        }
+		
+		public void ShowMonsterAddToScreen(Monster selectedAddMonster)
+        {
+            _selectedAddMonster = selectedAddMonster;
         }
     }
 }

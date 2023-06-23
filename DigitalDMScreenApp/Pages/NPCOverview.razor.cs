@@ -13,6 +13,7 @@ namespace DigitalDMScreenApp.Pages
         public List<NonPlayerCharacter>? NPCs { get; set; } = default!;
 
         private NonPlayerCharacter? _selectedNPC;
+        private NonPlayerCharacter? _selectedAddNPC;
 
         // Gets all notes and saves it to list variable 
         protected override async Task OnInitializedAsync()
@@ -25,6 +26,11 @@ namespace DigitalDMScreenApp.Pages
         public void ShowNPCQuickView(NonPlayerCharacter selectedNPC)
         {
             _selectedNPC = selectedNPC;
+        }
+
+        public void ShowNPCAddToScreen(NonPlayerCharacter selectedNPC)
+        {
+            _selectedAddNPC = selectedNPC;
         }
     }
 }

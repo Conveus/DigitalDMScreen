@@ -9,6 +9,7 @@
 else
 {
     <NoteQuickView Note="_selectedNote"></NoteQuickView>
+	<NoteAddToScreen Note="_selectedAddNote"></NoteAddToScreen>
     <a href="@($"noteedit")" class="btn btn-primary btn-sm mb-1">
         Create Note
     </a>
@@ -16,7 +17,7 @@ else
         @foreach (var note in Notes)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <NoteCard Note="note" NoteQuickViewClicked="ShowNoteQuickView"></NoteCard>
+                <NoteCard Note="note" NoteQuickViewClicked="ShowNoteQuickView" NoteAddToScreenClicked="ShowNoteAddToScreen"></NoteCard>
             </div>
 
         }

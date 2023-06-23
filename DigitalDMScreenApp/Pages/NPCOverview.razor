@@ -9,6 +9,7 @@
 else
 {
     <NPCQuickView NPC="_selectedNPC"></NPCQuickView>
+    <NPCAddToScreen NPC="_selectedAddNPC"></NPCAddToScreen>
     <a href="@($"npcedit")" class="btn btn-primary btn-sm mb-1">
         Create NPC
     </a>
@@ -16,7 +17,7 @@ else
         @foreach (var npc in NPCs)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <NPCCard NPC="npc" NPCQuickViewClicked="ShowNPCQuickView"></NPCCard>
+                <NPCCard NPC="npc" NPCQuickViewClicked="ShowNPCQuickView" NPCAddToScreenClicked="ShowNPCAddToScreen"></NPCCard>
             </div>
 
         }

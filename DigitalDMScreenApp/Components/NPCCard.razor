@@ -13,6 +13,8 @@
             <a href="@($"npcedit/{NPC.Id}")" class="btn btn-outline-primary btn-sm mb-1">
                 Edit NPC
             </a>
+
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await NPCAddToScreenClicked.InvokeAsync(NPC))"> Add to Screen</button>
         </div>
     </div>
 </div>

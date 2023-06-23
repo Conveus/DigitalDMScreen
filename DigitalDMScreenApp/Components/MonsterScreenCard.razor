@@ -1,0 +1,56 @@
+﻿<div class="col">
+    <div class="card rounded-3">
+        <div class="card-header py-3">
+            <h4>@Monster.Name</h4>
+        </div>
+        <div class="card-body text-center">
+            
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Level</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Monster.Level</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">ArmourClassC</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Monster.ArmourClass</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Health</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Monster.Health</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-5 col-form-label">Max Health</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Monster.MaxHealth</label>
+                </div>
+            </div>
+			
+			<div class="form-group row">
+                <label class="col-sm-5 col-form-label">Temp Health</label>
+                <div class="col-sm-7">
+                    <label type="text" readonly class="form-control-plaintext">@Monster.TempHealth</label>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await MonsterQuickViewClicked.InvokeAsync(Monster))"> Quick view</button>
+
+            @*<button class="btn btn-outline-primary btn-sm mb-1" @onclick="(() => NavigateToDetails(Monster))">
+            Full details
+            </button>*@
+
+            @*<a href="@($"monsteredit/{Monster.Id}")" class="btn btn-outline-primary btn-sm mb-1">
+            Edit Monster
+            </a>*@
+        </div>
+    </div>
+</div>
